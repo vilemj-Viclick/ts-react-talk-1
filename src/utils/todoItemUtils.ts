@@ -1,5 +1,5 @@
-export const isEditedItem = (item) => {
-  return item.hasOwnProperty('editedDescription') && typeof (item.editedDescription) === 'string';
+export const isEditedItem = (item: ITodoItem | IEditedTodoItem): item is IEditedTodoItem => {
+  return item.hasOwnProperty('editedDescription') && typeof ((item as any).editedDescription) === 'string';
 };
 
 export const createEditedItem = (item) => ({
@@ -10,13 +10,13 @@ export const createEditedItem = (item) => ({
 export const cancelEditing = ({
   editedDescription,
   ...rest
-}) =>
+}: IEditedTodoItem): ITodoItem =>
   rest;
 
 export const confirmItemEdit = ({
   editedDescription,
   ...rest
-}) =>
+}: IEditedTodoItem): ITodoItem =>
   ({
     ...rest,
     description: editedDescription,

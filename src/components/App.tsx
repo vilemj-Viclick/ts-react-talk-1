@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState } from 'react';
 import { initialData } from '../utils/initialData';
 import {
   createEditedItem,
@@ -26,20 +26,20 @@ export const App = () => {
       {todoItems.map(item => {
         if (isEditedItem(item)) {
           return (
-            <ItemEditor
+            <TodoItem
               key={item.id}
-              editedItem={item}
-              updateItem={updateAnItem}
+              todoItem={item}
+              toggleChecked={checked => toggleChecked(item, checked)}
+              startEditing={() => updateAnItem(createEditedItem(item))}
             />
           );
         }
 
         return (
-          <TodoItem
+          <ItemEditor
             key={item.id}
-            todoItem={item}
-            toggleChecked={checked => toggleChecked(item, checked)}
-            startEditing={() => updateAnItem(createEditedItem(item))}
+            editedItem={item}
+            updateItem={updateAnItem}
           />
         );
       })}
