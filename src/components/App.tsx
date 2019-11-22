@@ -4,6 +4,7 @@ import {
   createEditedItem,
   isEditedItem,
 } from '../utils/todoItemUtils';
+import { ItemEditor } from './ItemEditor';
 import { TodoItem } from './TodoItem';
 
 export const App = () => {
