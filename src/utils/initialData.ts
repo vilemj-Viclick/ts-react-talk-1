@@ -1,4 +1,4 @@
-export const initialData = [
+export const initialData: ReadonlyArray<ITodoItem | IEditedTodoItem> = [
   {
     id: 1,
     isChecked: false,
@@ -8,6 +8,6 @@ export const initialData = [
     id: 2,
     isChecked: false,
     description: 'Are we done here?',
-    editedItemDescription: 'I’m being edited',
+    editedDescription: 'I’m being edited',
   },
 ];
