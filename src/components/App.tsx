@@ -24,7 +24,7 @@ export const App = () => {
   return (
     <div className="center-block">
       {todoItems.map(item => {
-        if (isEditedItem(item)) {
+        if (!isEditedItem(item)) {
           return (
             <TodoItem
               key={item.id}
