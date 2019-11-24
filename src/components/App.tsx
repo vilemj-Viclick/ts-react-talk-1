@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, {
+  FC,
+  useState,
+} from 'react';
 import { initialData } from '../utils/initialData';
 import {
   createEditedItem,
@@ -7,7 +10,7 @@ import {
 import { ItemEditor } from './ItemEditor';
 import { TodoItem } from './TodoItem';
 
-export const App = () => {
+export const App: FC = () => {
   const [todoItems, setTodoItems] = useState(initialData);
 
   const updateAnItem = (updatedItem) => {
@@ -47,4 +50,4 @@ export const App = () => {
   );
 };
 
-App.displayName = App;
+App.displayName = 'App';
