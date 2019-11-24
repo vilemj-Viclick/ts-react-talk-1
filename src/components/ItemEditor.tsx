@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   cancelEditing,
   confirmItemEdit,
 } from '../utils/todoItemUtils';
 
-export const ItemEditor = ({ editedItem, updateItem }) => {
+interface IItemEditorProps {
+  readonly editedItem: IEditedTodoItem;
+  readonly updateItem: (updatedItem: IEditedTodoItem | ITodoItem) => void;
+}
+
+export const ItemEditor :FC<IItemEditorProps>= ({ editedItem, updateItem }) => {
   const onEditedDescriptionChange = (event) => {
     updateItem({
       ...editedItem,
