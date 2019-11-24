@@ -8,6 +8,6 @@ export const initialData = [
     id: 2,
     isChecked: false,
     description: 'Are we done here?',
-    editedDescription: 'I’m being edited',
+    editedItemDescription: 'I’m being edited',
   },
 ];
